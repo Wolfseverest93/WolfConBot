@@ -3,16 +3,11 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
+client.login(process.env.BOT_TOKEN);
+
 client.on('ready', () => {
     console.log('Your orders, captain?');
 });
-
-
-//  Variables  //
-
-new var = CY1
-
-CY1 = 0
 
 
 //  Open Functions  //
@@ -31,7 +26,7 @@ client.on('message', message => {
         if (message.member.roles.some(r=>["Big Bad Wolf!", "Knights of the Hammer!"].includes(r.name)) ) {
             message.reply('Beginning cleanup module!');
             console.log('Beginning cleanup module!');
-            CY1 = 1
+            MassDelete1();
         } else {
             message.reply('You do not have permission to do that!');
         }
@@ -39,32 +34,30 @@ client.on('message', message => {
 });
 
 
-//  Cycle One Functions  //
+//  Message Delete Loop  //
 
-while CY1 == 1 {
+function MassDelete1() {
     if (message.deletable) {
         message.delete()
             .then(msg => console.log(`Deleted message from ${msg.author}`))
             .catch(console.error);
-        CY1 = 2
+        setImmediate(() {
+                     MassDelete2();
+        });
     } else {
         console.log('No further messages to remove!')
-        CY1 = 0
     }
 });
-while CY1 == 2 {
+
+function MassDelete2() {
     if (message.deletable) {
         message.delete()
             .then(msg => console.log(`Deleted message from ${msg.author}`))
             .catch(console.error);
-        CY1 = 1
+        setImmediate(() {
+                     MassDelete1();
+        });
     } else {
         console.log('No further messages to remove!')
-        CY1 = 0
     }
 });
-
-
-//  Bot Login //
-
-client.login(process.env.BOT_TOKEN);
