@@ -1,0 +1,13 @@
+{
+  "name": "WolfConBot",
+  "description": "Personal bot for discord",
+  "version": "0.0.1",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "dependencies": {
+    "discord.js": "11.2.1",
+    "request": "2.81.0"
+  }
+}
