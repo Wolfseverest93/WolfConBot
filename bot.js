@@ -1,23 +1,19 @@
-//  Core
+//  Core  //
 
 const Discord = require('discord.js');
 const client = new Discord.Client();
-
-client.login(process.env.BOT_TOKEN);
 
 client.on('ready', () => {
     console.log('Your orders, captain?');
 });
 
 
-//  Variables
+//  Variables  //
 
 var CY1 = 0
-var CY2 = 0
-var CY3 = 0
 
 
-//  Open Functions
+//  Open Functions  //
 
 client.on('message', message => {
     if (message.content == 'Salute!') {
@@ -26,7 +22,7 @@ client.on('message', message => {
 });
 
 
-//  Moderator Functions
+//  Moderator Functions  //
 
 client.on('message', message => {
     if (message.content == '+Cleanup') {
@@ -41,7 +37,7 @@ client.on('message', message => {
 });
 
 
-//  Cycle One Functions
+//  Cycle One Functions  //
 
 while CY1 == 1 {
     if (message.deletable) {
@@ -65,3 +61,8 @@ while CY1 == 2 {
         CY1 = 0
     }
 });
+
+
+//  Bot Login //
+
+client.login(process.env.BOT_TOKEN);
