@@ -10,7 +10,9 @@ client.on('ready', () => {
 
 //  Variables  //
 
-var CY1 = 0
+new var = CY1
+
+CY1 = 0
 
 
 //  Open Functions  //
