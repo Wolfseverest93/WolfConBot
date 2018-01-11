@@ -12,10 +12,6 @@ client.on('ready', () => {
 
 //  Variables
 
-var = 
-var =
-var =
-
 var CY1 = 0
 var CY2 = 0
 var CY3 = 0
