@@ -47,7 +47,7 @@ function MassDelete1() {
     } else {
         console.log('No further messages to remove!')
     }
-});
+}
 
 function MassDelete2() {
     if (message.deletable) {
@@ -60,4 +60,4 @@ function MassDelete2() {
     } else {
         console.log('No further messages to remove!')
     }
-});
+}
