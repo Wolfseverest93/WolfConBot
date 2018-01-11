@@ -43,6 +43,7 @@ function MassDelete1() {
             .catch(console.error);
         setImmediate(() => {
                      MassDelete2();
+        });
     } else {
         console.log('No further messages to remove!')
     }
@@ -55,6 +56,7 @@ function MassDelete2() {
             .catch(console.error);
         setImmediate(() => {
                      MassDelete1();
+        });
     } else {
         console.log('No further messages to remove!')
     }
