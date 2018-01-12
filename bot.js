@@ -38,8 +38,8 @@ client.on('message', message => {
 
 function MassDelete1() {
     channel.fetchMessages({limit: 1})
-        .then (messages => (message.deletable) {
-            .then (messages => message.delete(1)
+        .then(msg => (message.deletable)) {
+            .then(msg => message.delete(1))
                 .then(msg => console.log('Deleted message from ${msg.author}'))
                 .catch(console.error);
             setTimeout(() => {
@@ -53,8 +53,8 @@ function MassDelete1() {
 
 function MassDelete2() {
     channel.fetchMessages({limit: 1})
-        .then (messages => (message.deletable) {
-            .then (messages => message.delete(1)
+        .then(msg => (message.deletable)) {
+            .then(msg => message.delete(1))
                 .then(msg => console.log('Deleted message from ${msg.author}'))
                 .catch(console.error);
             setTimeout(() => {
