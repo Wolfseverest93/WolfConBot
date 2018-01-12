@@ -36,7 +36,7 @@ client.on('message', message => {
     if (message.content == 'Purge!') {
         if (message.member.roles.some(r=>["Big Bad Wolf!", "Knights of the Hammer!"].includes(r.name)) ) {
             console.log('Purging messages!')
-            message.channel.bulkDelete(20, [filterOld])
+            message.channel.bulkDelete(20, [1])
         } else {
             message.reply('You do not have permission to do that!');
         }
