@@ -36,7 +36,7 @@ client.on('message', message => {
 //  Message Delete Loop  //
 
 function MassDelete1() {
-    if (this.fetchMessages({limit: 1})) {
+    if (this.lastMessageID) {
         if (msg => (message.deletable)) {
             msg => message.delete(1)
                 .then(msg => console.log('Deleted message from ${msg.author}'))
@@ -54,7 +54,7 @@ function MassDelete1() {
             
 
 function MassDelete2() {
-    if (this.fetchMessages({limit: 1})) {
+    if (this.lastMessageID) {
         if (msg => (message.deletable)) {
             msg => message.delete(1)
                 .then(msg => console.log('Deleted message from ${msg.author}'))
