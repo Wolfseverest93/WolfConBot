@@ -21,17 +21,6 @@ client.on('message', message => {
 
 //  Moderator Functions  //
 
-//client.on('message', message => {
-//    if (message.content == 'Cleanup!') {
-//        if (message.member.roles.some(r=>["Big Bad Wolf!", "Knights of the Hammer!"].includes(r.name)) ) {
-//            console.log('Beginning cleanup module!');
-//            var intervalCleanup =
-//        } else {
-//            message.reply('You do not have permission to do that!');
-//        }
-//    }
-//});
-
 client.on('message', message => {
     if (message.content == 'Purge!') {
         if (message.member.roles.some(r=>["Big Bad Wolf!", "Knights of the Hammer!"].includes(r.name)) ) {
