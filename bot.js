@@ -36,23 +36,21 @@ client.on('message', message => {
 //  Message Delete Loop  //
 
 function MassDelete1() {
-    this.lastMessageID = null
-        .then(msg => (message.deletable))
-            .then(msg => message.delete(1))
-                .then(msg => console.log('Deleted message from ${msg.author}'))
-                .catch(console.error);
-            setTimeout(() => {
-                MassDelete2();
-            }, 10);
+    message.channel.fetchMessages()
+        .then (this.lastMessageID.message.delete(1))
+            .then(msg => console.log('Deleted message from ${msg.author}'))
+            .catch(console.error)
+        setTimeout(() => {
+            MassDelete2()
+        }, 10);
 }
 
 function MassDelete2() {
-    this.lastMessageID = null
-        .then(msg => (message.deletable))
-            .then(msg => message.delete(1))
-                .then(msg => console.log('Deleted message from ${msg.author}'))
-                .catch(console.error);
-            setTimeout(() => {
-                MassDelete1();
-            }, 10);
+    message.channel.fetchMessages()
+        .then (this.lastMessageID.message.delete(1))
+            .then(msg => console.log('Deleted message from ${msg.author}'))
+            .catch(console.error)
+        setTimeout(() => {
+            MassDelete1()
+        }, 10);
 }
