@@ -38,29 +38,23 @@ client.on('message', message => {
 
 function MassDelete1() {
     channel.fetchMessages({limit: 1})
-        .then(msg => (message.deletable)) {
+        .then(msg => (message.deletable))
             .then(msg => message.delete(1))
                 .then(msg => console.log('Deleted message from ${msg.author}'))
                 .catch(console.error);
             setTimeout(() => {
                 MassDelete2();
-            });
-    } else {
-        console.log('No messages retrieved!')
-    }
+            }, 10);
 }
             
 
 function MassDelete2() {
     channel.fetchMessages({limit: 1})
-        .then(msg => (message.deletable)) {
+        .then(msg => (message.deletable))
             .then(msg => message.delete(1))
                 .then(msg => console.log('Deleted message from ${msg.author}'))
                 .catch(console.error);
             setTimeout(() => {
                 MassDelete1();
-            });
-    } else {
-        console.log('No messages retrieved!')
-    }
+            }, 10);
 }
