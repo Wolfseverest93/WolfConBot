@@ -37,27 +37,30 @@ client.on('message', message => {
 //  Message Delete Loop  //
 
 function MassDelete1() {
-    if (message.deletable) {
-        message.delete()
-            .then(msg => console.log(`Deleted message from ${msg.author}`))
-            .catch(console.error);
-        setImmediate(() => {
-                     MassDelete2();
-        });
+    channel.fetchMessages({limit: 1})
+        .then (messages => if (message.deletable) {
+            message.delete()
+                .then(msg => console.log('Deleted message from ${msg.author}'))
+                .catch(console.error);
+            setTimeout(() => {
+                MassDelete2();
+            });
     } else {
-        console.log('No further messages to remove!')
+        console.log('No messages retrieved!')
     }
 }
+            
 
 function MassDelete2() {
-    if (message.deletable) {
-        message.delete()
-            .then(msg => console.log(`Deleted message from ${msg.author}`))
-            .catch(console.error);
-        setImmediate(() => {
-                     MassDelete1();
-        });
+    channel.fetchMessages({limit: 1})
+        .then (messages => if (message.deletable) {
+            message.delete()
+                .then(msg => console.log('Deleted message from ${msg.author}'))
+                .catch(console.error);
+            setTimeout(() => {
+                MassDelete1();
+            });
     } else {
-        console.log('No further messages to remove!')
+        console.log('No messages retrieved!')
     }
 }
