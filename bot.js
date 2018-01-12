@@ -21,36 +21,24 @@ client.on('message', message => {
 
 //  Moderator Functions  //
 
+//client.on('message', message => {
+//    if (message.content == 'Cleanup!') {
+//        if (message.member.roles.some(r=>["Big Bad Wolf!", "Knights of the Hammer!"].includes(r.name)) ) {
+//            console.log('Beginning cleanup module!');
+//            var intervalCleanup =
+//        } else {
+//            message.reply('You do not have permission to do that!');
+//        }
+//    }
+//});
+
 client.on('message', message => {
-    if (message.content == '+Cleanup') {
+    if (message.content == 'Purge!') {
         if (message.member.roles.some(r=>["Big Bad Wolf!", "Knights of the Hammer!"].includes(r.name)) ) {
-            console.log('Beginning cleanup module!');
-            MassDelete1();
+            console.log('Purging messages!')
+            message.channel.bulkDelete(20, [filterOld])
         } else {
             message.reply('You do not have permission to do that!');
         }
     }
 });
-
-
-//  Message Delete Loop  //
-
-function MassDelete1() {
-    message.channel.fetchMessages()
-        .then (this.lastMessageID.message.delete(1))
-            .then(msg => console.log('Deleted message from ${msg.author}'))
-            .catch(console.error)
-        setTimeout(() => {
-            MassDelete2()
-        }, 10);
-}
-
-function MassDelete2() {
-    message.channel.fetchMessages()
-        .then (this.lastMessageID.message.delete(1))
-            .then(msg => console.log('Deleted message from ${msg.author}'))
-            .catch(console.error)
-        setTimeout(() => {
-            MassDelete1()
-        }, 10);
-}
